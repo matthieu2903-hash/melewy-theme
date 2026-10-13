@@ -236,6 +236,21 @@ add_filter(
 );
 
 /**
+ * Les codes courts du thème sont exécutés au moment du rendu du bloc, pour
+ * connaître l'élément en cours dans une boucle de requête (sinon WordPress
+ * les exécute après la boucle, avec la page entière comme contexte).
+ */
+add_filter(
+	'render_block_core/shortcode',
+	function ( $html ) {
+		if ( false !== strpos( $html, '[melewy_' ) ) {
+			$html = do_shortcode( $html );
+		}
+		return $html;
+	}
+);
+
+/**
  * [melewy_categorie] : nom de la catégorie du projet courant (dans une boucle ou sur la page).
  */
 add_shortcode(
