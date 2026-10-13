@@ -237,8 +237,10 @@ add_filter(
 
 /**
  * Les codes courts du thème sont exécutés au moment du rendu du bloc, pour
- * connaître l'élément en cours dans une boucle de requête (sinon WordPress
- * les exécute après la boucle, avec la page entière comme contexte).
+ * connaître l'élément en cours dans une boucle de requête.
+ * Dans les modèles (templates), WordPress exécute les codes courts AVANT les
+ * blocs : on y écrit donc [[melewy_categorie]], que ce premier passage
+ * transforme en [melewy_categorie], exécuté ensuite ici, dans la boucle.
  */
 add_filter(
 	'render_block_core/shortcode',
