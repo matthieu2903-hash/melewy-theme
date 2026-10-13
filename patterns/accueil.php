@@ -86,6 +86,22 @@
 <!-- /wp:post-template --></div>
 <!-- /wp:query -->
 
+<!-- wp:group {"className":"is-style-tuile","backgroundColor":"citron","style":{"spacing":{"margin":{"top":"16px"}}},"layout":{"type":"default"}} -->
+<div class="wp-block-group is-style-tuile has-citron-background-color has-background" style="margin-top:16px"><!-- wp:paragraph {"fontSize":"small","style":{"typography":{"fontWeight":"600"}}} -->
+<p class="has-small-font-size" style="font-weight:600">Ils m'ont fait confiance</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote {"className":"temoignage"} -->
+<blockquote class="wp-block-quote temoignage"><!-- wp:paragraph {"fontSize":"x-large","style":{"typography":{"fontWeight":"800"}}} -->
+<p class="has-x-large-font-size" style="font-weight:800">Une qualité indéniable !</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"fontSize":"large"} -->
+<p class="has-large-font-size">« Merci à Matthieu pour ce site qui correspond pleinement à mes attentes. Il est clair, efficace et attire déjà l'attention – plusieurs retours très positifs me sont parvenus depuis sa mise en ligne. »</p>
+<!-- /wp:paragraph --><cite><strong>Mino</strong>, artiste · 22 mars 2025</cite></blockquote>
+<!-- /wp:quote --></div>
+<!-- /wp:group -->
+
 <!-- wp:group {"className":"rangee","style":{"spacing":{"margin":{"top":"16px"}}},"layout":{"type":"flex","flexWrap":"wrap","verticalAlignment":"stretch"}} -->
 <div class="wp-block-group rangee" style="margin-top:16px"><!-- wp:group {"className":"is-style-tuile","layout":{"type":"default"}} -->
 <div class="wp-block-group is-style-tuile"><!-- wp:heading {"level":3} -->
