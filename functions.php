@@ -399,3 +399,41 @@ add_filter(
 	10,
 	2
 );
+
+/**
+ * Redirections 301 des adresses de l'ancien site (Elementor) vers le nouveau.
+ * Ne s'appliquent que si l'ancienne adresse ne correspond plus à aucune page.
+ */
+add_action(
+	'template_redirect',
+	function () {
+		if ( ! is_404() ) {
+			return;
+		}
+		$anciennes = array(
+			'mon-parcours'                => '/parcours/',
+			'journal-de-bord'             => '/journal/',
+			'marketing'                   => '/portfolio/marketing/',
+			'communication'               => '/portfolio/communication/',
+			'creation-graphique'          => '/portfolio/creation-graphique/',
+			'etude-de-terrain'            => '/portfolio/travaux-universitaires/',
+			'mimuss'                      => '/portfolio/marketing/mimuss/',
+			'durancy'                     => '/portfolio/marketing/durancy/',
+			'fram'                        => '/portfolio/communication/fram/',
+			'projet-podcast'              => '/portfolio/communication/projet-podcast/',
+			'identite-visuelle-branding'  => '/portfolio/creation-graphique/bruxlab/',
+			'maquettes-interfaces'        => '/portfolio/creation-graphique/maquettes-interfaces/',
+			'adaptation-de-branding'      => '/portfolio/creation-graphique/adaptation-de-branding/',
+			'old-script'                  => '/portfolio/gestion-de-projet/old-script/',
+			'lacqua-alta'                 => '/portfolio/travaux-universitaires/acqua-alta/',
+			'etude-de-terrain-parc-national-des-ecrins-vallouise-2022' => '/portfolio/travaux-universitaires/parc-national-des-ecrins/',
+			'projet-durancy-strategie-marketing-objectifs-smarte-plan-daction' => '/portfolio/marketing/durancy/',
+		);
+		$chemin = isset( $_SERVER['REQUEST_URI'] ) ? trim( (string) wp_parse_url( sanitize_text_field( wp_unslash( $_SERVER['REQUEST_URI'] ) ), PHP_URL_PATH ), '/' ) : '';
+		if ( isset( $anciennes[ $chemin ] ) ) {
+			wp_safe_redirect( home_url( $anciennes[ $chemin ] ), 301, 'Melewy' );
+			exit;
+		}
+	},
+	1
+);
