@@ -1,0 +1,163 @@
+/* Melewy — styles complémentaires à theme.json (piste C « Studio bento »). */
+
+/* ---------- Tuiles ---------- */
+.is-style-tuile {
+	border-radius: var(--wp--custom--rayon--tuile, 28px);
+	padding: var(--wp--preset--spacing--50) var(--wp--preset--spacing--40);
+	background-color: var(--wp--preset--color--surface);
+	box-sizing: border-box;
+}
+.is-style-tuile > :first-child { margin-top: 0; }
+.is-style-tuile > :last-child { margin-bottom: 0; }
+
+/* Rangées de tuiles : la tuile .large prend deux fois plus de place. */
+.rangee { align-items: stretch !important; }
+.rangee > * { flex: 1 1 280px; min-width: 0; }
+.rangee > .large { flex: 2 1 520px; }
+
+/* ---------- Pastilles ---------- */
+.is-style-pastille {
+	display: inline-block;
+	padding: 6px 14px;
+	border-radius: 999px;
+	background-color: var(--wp--preset--color--citron);
+	color: var(--wp--preset--color--encre);
+	font-size: var(--wp--preset--font-size--small);
+	font-weight: 600;
+}
+.melewy-categorie { font-size: var(--wp--preset--font-size--small); font-weight: 600; }
+
+/* ---------- Menu en pilule ---------- */
+.entete { padding-bottom: 8px; }
+.nav-pilule {
+	width: fit-content;
+	max-width: 100%;
+	margin-inline: auto;
+	padding: 6px;
+	border-radius: 999px;
+	background: var(--wp--preset--color--surface);
+	box-sizing: border-box;
+}
+.nav-pilule .wp-block-navigation__container { flex-wrap: wrap; justify-content: center; gap: 4px; }
+.nav-pilule .wp-block-navigation-item__content {
+	display: inline-flex;
+	align-items: center;
+	min-height: 44px;
+	padding: 0 20px;
+	border-radius: 999px;
+	text-decoration: none;
+	color: var(--wp--preset--color--encre);
+}
+.nav-pilule .wp-block-navigation-item__content:hover { background: var(--wp--preset--color--fond); color: var(--wp--preset--color--encre); }
+.nav-pilule .est-actif > .wp-block-navigation-item__content,
+.nav-pilule .est-actif > .wp-block-navigation-item__content:hover {
+	background: var(--wp--preset--color--encre);
+	color: var(--wp--preset--color--surface);
+}
+.nav-pilule .nav-contact > .wp-block-navigation-item__content,
+.nav-pilule .nav-contact > .wp-block-navigation-item__content:hover {
+	background: var(--wp--preset--color--accent);
+	color: var(--wp--preset--color--surface);
+}
+@media (max-width: 600px) {
+	.nav-pilule { border-radius: 28px; }
+	.nav-pilule .wp-block-navigation-item__content { padding: 0 14px; }
+}
+
+/* ---------- Tuiles de projet ---------- */
+.tuile-projet {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: 24px;
+	min-height: 240px;
+	height: 100%;
+	transition: transform 0.2s ease;
+}
+.tuile-projet .wp-block-post-title { margin: 0; font-size: 1.625rem; line-height: 1.1; }
+.tuile-projet .wp-block-post-title a { text-decoration: none; }
+.tuile-projet .wp-block-post-title a::after { content: ""; position: absolute; inset: 0; border-radius: inherit; }
+.tuile-projet .wp-block-post-excerpt { margin-top: 8px; }
+.tuile-projet .wp-block-post-excerpt__excerpt { margin: 0; }
+.tuile-projet:hover { transform: translateY(-3px); }
+.tuile-projet:focus-within { outline: 3px solid var(--wp--preset--color--accent); outline-offset: 3px; }
+.wp-block-post-template.is-layout-grid > li { height: 100%; }
+
+/* Couleurs par catégorie (tuiles et en-tête de page projet). */
+.categorie-marketing .tuile-projet, body.categorie-marketing .projet-hero { background-color: var(--wp--preset--color--marketing); }
+.categorie-communication .tuile-projet, body.categorie-communication .projet-hero { background-color: var(--wp--preset--color--communication); }
+.categorie-creation-graphique .tuile-projet, body.categorie-creation-graphique .projet-hero { background-color: var(--wp--preset--color--creation); }
+.categorie-gestion-de-projet .tuile-projet, body.categorie-gestion-de-projet .projet-hero { background-color: var(--wp--preset--color--gestion); }
+.categorie-travaux-universitaires .tuile-projet, body.categorie-travaux-universitaires .projet-hero { background-color: var(--wp--preset--color--universitaire); }
+
+/* ---------- Tuiles d'article (journal) ---------- */
+.tuile-article { position: relative; display: flex; flex-direction: column; gap: 12px; height: 100%; transition: transform 0.2s ease; }
+.tuile-article .wp-block-post-title { margin: 0; font-size: 1.5rem; line-height: 1.15; }
+.tuile-article .wp-block-post-title a { text-decoration: none; }
+.tuile-article .wp-block-post-title a::after { content: ""; position: absolute; inset: 0; border-radius: inherit; }
+.tuile-article:hover { transform: translateY(-3px); }
+.tuile-article:focus-within { outline: 3px solid var(--wp--preset--color--accent); outline-offset: 3px; }
+
+/* ---------- Filtres du portfolio ---------- */
+.melewy-filtres ul { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.melewy-filtres a {
+	display: inline-flex;
+	align-items: center;
+	min-height: 44px;
+	padding: 0 20px;
+	border: 1.5px solid var(--wp--preset--color--encre);
+	border-radius: 999px;
+	font-size: var(--wp--preset--font-size--small);
+	font-weight: 500;
+	text-decoration: none;
+	color: var(--wp--preset--color--encre);
+}
+.melewy-filtres a:hover { background: var(--wp--preset--color--fond); color: var(--wp--preset--color--encre); }
+.melewy-filtres a[aria-current="page"] { background: var(--wp--preset--color--encre); color: var(--wp--preset--color--surface); font-weight: 600; }
+
+/* ---------- Fil d'Ariane ---------- */
+.melewy-ariane ol { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0 8px; list-style: none; font-size: var(--wp--preset--font-size--small); color: var(--wp--preset--color--texte-doux); }
+.melewy-ariane li + li::before { content: "/"; margin-right: 6px; }
+.melewy-ariane a { color: var(--wp--preset--color--texte-doux); }
+
+/* ---------- Projet suivant / retour ---------- */
+.melewy-suite { display: flex; flex-wrap: wrap; gap: 16px; }
+.melewy-suite a {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: 16px;
+	min-height: 180px;
+	padding: 32px;
+	border-radius: 28px;
+	box-sizing: border-box;
+	text-decoration: none;
+	transition: transform 0.2s ease;
+}
+.melewy-suite a:hover { transform: translateY(-3px); }
+.melewy-suite span { font-size: var(--wp--preset--font-size--small); font-weight: 600; }
+.melewy-suite strong { font-size: 1.75rem; font-weight: 800; line-height: 1.1; letter-spacing: -0.02em; }
+.melewy-suite__suivant { flex: 2 1 420px; background: var(--wp--preset--color--surface); color: var(--wp--preset--color--encre); }
+.melewy-suite__suivant.categorie-marketing { background: var(--wp--preset--color--marketing); }
+.melewy-suite__suivant.categorie-communication { background: var(--wp--preset--color--communication); }
+.melewy-suite__suivant.categorie-creation-graphique { background: var(--wp--preset--color--creation); }
+.melewy-suite__suivant.categorie-gestion-de-projet { background: var(--wp--preset--color--gestion); }
+.melewy-suite__suivant.categorie-travaux-universitaires { background: var(--wp--preset--color--universitaire); }
+.melewy-suite__retour { flex: 1 1 240px; background: var(--wp--preset--color--encre); color: var(--wp--preset--color--surface); }
+.melewy-suite__retour:hover { color: var(--wp--preset--color--surface); }
+
+/* ---------- Divers ---------- */
+.projet-visuel img { width: 100%; border-radius: 28px; }
+.wp-block-post-featured-image img { border-radius: 28px; }
+.pied { text-align: center; color: var(--wp--preset--color--texte-doux); font-size: var(--wp--preset--font-size--small); }
+.pied a { color: var(--wp--preset--color--texte-doux); }
+.liste-traits > * { padding: 14px 0; border-top: 1px solid var(--wp--preset--color--trait); margin: 0 !important; }
+.puces { display: flex; flex-wrap: wrap; gap: 10px; margin: 0; padding: 0; list-style: none; }
+.puces li { padding: 10px 16px; border-radius: 999px; background: var(--wp--preset--color--fond); font-weight: 500; }
+.tuile-sombre a { color: var(--wp--preset--color--surface); }
+
+@media (prefers-reduced-motion: reduce) {
+	.tuile-projet, .tuile-article, .melewy-suite a { transition: none; }
+	.tuile-projet:hover, .tuile-article:hover, .melewy-suite a:hover { transform: none; }
+}

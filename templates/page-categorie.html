@@ -1,0 +1,41 @@
+<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+
+<!-- wp:group {"tagName":"main","layout":{"type":"constrained","contentSize":"1232px"}} -->
+<main class="wp-block-group"><!-- wp:shortcode -->
+[melewy_ariane]
+<!-- /wp:shortcode -->
+
+<!-- wp:group {"className":"is-style-tuile","layout":{"type":"constrained","contentSize":"1232px","justifyContent":"left"}} -->
+<div class="wp-block-group is-style-tuile"><!-- wp:post-title {"level":1} /-->
+
+<!-- wp:post-content {"layout":{"type":"constrained","contentSize":"640px","justifyContent":"left"}} /-->
+
+<!-- wp:shortcode -->
+[melewy_filtres]
+<!-- /wp:shortcode --></div>
+<!-- /wp:group -->
+
+<!-- wp:query {"queryId":11,"query":{"perPage":50,"pages":0,"offset":0,"postType":"page","order":"asc","orderBy":"title","inherit":false,"melewyEnfants":true}} -->
+<div class="wp-block-query"><!-- wp:post-template {"layout":{"type":"grid","minimumColumnWidth":"17.5rem"}} -->
+<!-- wp:group {"className":"is-style-tuile tuile-projet","layout":{"type":"default"}} -->
+<div class="wp-block-group is-style-tuile tuile-projet"><!-- wp:shortcode -->
+[melewy_categorie]
+<!-- /wp:shortcode -->
+
+<!-- wp:group {"layout":{"type":"default"}} -->
+<div class="wp-block-group"><!-- wp:post-title {"level":2,"isLink":true} /-->
+
+<!-- wp:post-excerpt {"moreText":"","excerptLength":30} /--></div>
+<!-- /wp:group --></div>
+<!-- /wp:group -->
+<!-- /wp:post-template -->
+
+<!-- wp:query-no-results -->
+<!-- wp:paragraph -->
+<p>Aucun projet dans cette catégorie pour le moment.</p>
+<!-- /wp:paragraph -->
+<!-- /wp:query-no-results --></div>
+<!-- /wp:query --></main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->
