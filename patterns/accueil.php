@@ -33,10 +33,10 @@
 <!-- /wp:buttons --></div>
 <!-- /wp:group -->
 
-<!-- wp:group {"className":"is-style-tuile","backgroundColor":"accent","textColor":"surface","layout":{"type":"flex","orientation":"vertical","justifyContent":"center","verticalAlignment":"center"}} -->
-<div class="wp-block-group is-style-tuile has-surface-color has-accent-background-color has-text-color has-background"><!-- wp:paragraph {"align":"center"} -->
-<p class="has-text-align-center">[Ta photo ou ton portrait]</p>
-<!-- /wp:paragraph --></div>
+<!-- wp:group {"className":"is-style-tuile tuile-photo","backgroundColor":"accent","textColor":"surface","layout":{"type":"default"}} -->
+<div class="wp-block-group is-style-tuile tuile-photo has-surface-color has-accent-background-color has-text-color has-background"><!-- wp:image {"sizeSlug":"large","className":"photo-portrait"} -->
+<figure class="wp-block-image size-large photo-portrait"><img alt="Portrait de Matthieu Mercier"/></figure>
+<!-- /wp:image --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
 
@@ -134,11 +134,11 @@
 
 <!-- wp:group {"className":"liste-traits","layout":{"type":"default"}} -->
 <div class="wp-block-group liste-traits"><!-- wp:paragraph -->
-<p><strong>2024 → 2027</strong><br>MBA Expert Marketing Digital · MyDigitalSchool Paris</p>
+<p><strong>M2 en alternance, jusqu'en août 2027</strong><br>MBA Expert Marketing Digital · MyDigitalSchool Paris<br>Rédacteur web · AFTRAL</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p><strong>[Période]</strong><br>Rédacteur web en alternance · AFTRAL</p>
+<p><strong>Licence</strong><br>Géographie et aménagement du territoire · Université Paris Cité</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 

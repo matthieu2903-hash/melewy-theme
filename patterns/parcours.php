@@ -16,7 +16,7 @@
 
 <!-- wp:group {"className":"liste-traits","layout":{"type":"default"}} -->
 <div class="wp-block-group liste-traits"><!-- wp:paragraph -->
-<p><strong>[Période]</strong><br>Rédacteur web en alternance · AFTRAL<br>[Missions principales]</p>
+<p><strong>En alternance, jusqu'en août 2027</strong><br>Rédacteur web · AFTRAL, Direction Communication Marketing<br>SEO et SEA, co-gestion de 8 sites web, fiches Google Business Profile, gestion de bases de données, reporting mensuel des KPI et analytics.</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
@@ -28,11 +28,11 @@
 
 <!-- wp:group {"className":"liste-traits","layout":{"type":"default"}} -->
 <div class="wp-block-group liste-traits"><!-- wp:paragraph -->
-<p><strong>2024 → 2027</strong><br>MBA Expert Marketing Digital · MyDigitalSchool Paris</p>
+<p><strong>M2 en cours, jusqu'en août 2027</strong><br>MBA Expert Marketing Digital · MyDigitalSchool Paris</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p><strong>[Années]</strong><br>Licence de géographie · [Université]</p>
+<p><strong>Licence</strong><br>Géographie et aménagement du territoire, spécialisation environnement · Université Paris Cité (anciennement Paris Diderot)</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>

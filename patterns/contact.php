@@ -26,11 +26,11 @@
 <!-- wp:group {"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
 <div class="wp-block-group"><!-- wp:group {"className":"is-style-tuile tuile-sombre","backgroundColor":"encre","textColor":"surface","layout":{"type":"default"}} -->
 <div class="wp-block-group is-style-tuile tuile-sombre has-surface-color has-encre-background-color has-text-color has-background"><!-- wp:paragraph {"textColor":"citron","fontSize":"small","style":{"typography":{"fontWeight":"600"}}} -->
-<p class="has-citron-color has-text-color has-small-font-size" style="font-weight:600">Écrire directement</p>
+<p class="has-citron-color has-text-color has-small-font-size" style="font-weight:600">Me retrouver</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"style":{"typography":{"fontWeight":"600"}}} -->
-<p style="font-weight:600">[ton@email.com]<br>[Lien LinkedIn]</p>
+<!-- wp:paragraph {"fontSize":"x-large","style":{"typography":{"fontWeight":"800"}}} -->
+<p class="has-x-large-font-size" style="font-weight:800"><a href="https://www.linkedin.com/in/matthieu-mercier/">LinkedIn →</a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 

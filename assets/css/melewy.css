@@ -147,6 +147,12 @@
 .melewy-suite__retour { flex: 1 1 240px; background: var(--wp--preset--color--encre); color: var(--wp--preset--color--surface); }
 .melewy-suite__retour:hover { color: var(--wp--preset--color--surface); }
 
+/* ---------- Photo de l'accueil ---------- */
+.tuile-photo { position: relative; min-height: 320px; padding: 0 !important; overflow: hidden; }
+.tuile-photo .photo-portrait { margin: 0; height: 100%; }
+.tuile-photo .photo-portrait img { width: 100%; height: 100%; min-height: 320px; object-fit: cover; display: block; }
+.tuile-photo .photo-portrait img:not([src]) { display: none; }
+
 /* ---------- Divers ---------- */
 .projet-visuel img { width: 100%; border-radius: 28px; }
 .wp-block-post-featured-image img { border-radius: 28px; }
