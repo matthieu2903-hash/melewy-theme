@@ -69,17 +69,49 @@ add_action(
 );
 
 /**
- * Identifiant de la page Portfolio (0 si absente).
+ * Statuts visibles : les pages privées ne sont montrées qu'aux personnes
+ * autorisées à les lire (aperçu avant mise en ligne).
+ *
+ * @return string[]
+ */
+function melewy_statuts() {
+	return current_user_can( 'read_private_pages' ) ? array( 'publish', 'private' ) : array( 'publish' );
+}
+
+/**
+ * Identifiant de la page Portfolio : la page qui utilise le modèle « Portfolio »
+ * (à défaut, la page dont le slug est portfolio). 0 si absente.
  *
  * @return int
  */
 function melewy_portfolio_id() {
-	$page = get_page_by_path( 'portfolio' );
-	return $page ? (int) $page->ID : 0;
+	static $id = null;
+	if ( null !== $id ) {
+		return $id;
+	}
+	$pages = get_posts(
+		array(
+			'post_type'      => 'page',
+			'post_status'    => melewy_statuts(),
+			'meta_key'       => '_wp_page_template', // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_key
+			'meta_value'     => 'page-portfolio', // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_value
+			'posts_per_page' => 1,
+			'fields'         => 'ids',
+			'orderby'        => 'ID',
+			'order'          => 'DESC',
+		)
+	);
+	if ( $pages ) {
+		$id = (int) $pages[0];
+	} else {
+		$page = get_page_by_path( 'portfolio' );
+		$id   = $page ? (int) $page->ID : 0;
+	}
+	return $id;
 }
 
 /**
- * Pages publiées enfants d'une page, triées par ordre puis titre.
+ * Pages enfants d'une page, triées par ordre puis titre.
  *
  * @param int $parent_id Page parente.
  * @return WP_Post[]
@@ -88,11 +120,16 @@ function melewy_enfants( $parent_id ) {
 	if ( ! $parent_id ) {
 		return array();
 	}
-	return get_pages(
+	return get_posts(
 		array(
-			'parent'      => (int) $parent_id,
-			'sort_column' => 'menu_order,post_title',
-			'post_status' => 'publish',
+			'post_type'      => 'page',
+			'post_parent'    => (int) $parent_id,
+			'post_status'    => melewy_statuts(),
+			'posts_per_page' => -1,
+			'orderby'        => array(
+				'menu_order' => 'ASC',
+				'title'      => 'ASC',
+			),
 		)
 	);
 }
@@ -116,6 +153,10 @@ add_filter(
 	'query_loop_block_query_vars',
 	function ( $query, $block ) {
 		$params = isset( $block->context['query'] ) && is_array( $block->context['query'] ) ? $block->context['query'] : array();
+
+		if ( ! empty( $params['melewyEnfants'] ) || ! empty( $params['melewyProjets'] ) ) {
+			$query['post_status'] = melewy_statuts();
+		}
 
 		if ( ! empty( $params['melewyEnfants'] ) ) {
 			$query['post_type']   = 'page';

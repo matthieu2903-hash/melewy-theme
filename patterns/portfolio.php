@@ -8,13 +8,19 @@
  * @package Melewy
  */
 ?>
+<!-- wp:group {"className":"is-style-tuile","layout":{"type":"constrained","contentSize":"1232px","justifyContent":"left"}} -->
+<div class="wp-block-group is-style-tuile"><!-- wp:heading {"level":1} -->
+<h1 class="wp-block-heading">Portfolio</h1>
+<!-- /wp:heading -->
+
 <!-- wp:paragraph {"textColor":"texte-doux","fontSize":"large"} -->
-<p class="has-texte-doux-color has-text-color has-large-font-size">Mes projets, classés par catégorie. Certains mélangent plusieurs disciplines : les filtres t'aident à les retrouver.</p>
+<p class="has-texte-doux-color has-text-color has-large-font-size">Mes projets, menés seul ou en équipe, à MyDigitalSchool Paris et à l'Université Paris Cité. Certains mélangent plusieurs disciplines : les filtres t'aident à les retrouver.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:shortcode -->
 [melewy_filtres]
-<!-- /wp:shortcode -->
+<!-- /wp:shortcode --></div>
+<!-- /wp:group -->
 
 <!-- wp:query {"queryId":41,"query":{"perPage":100,"pages":0,"offset":0,"postType":"page","order":"asc","orderBy":"title","inherit":false,"melewyProjets":true}} -->
 <div class="wp-block-query"><!-- wp:post-template {"layout":{"type":"grid","minimumColumnWidth":"17.5rem"}} -->
