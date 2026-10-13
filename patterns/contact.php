@@ -18,9 +18,7 @@
 <p class="has-texte-doux-color has-text-color has-large-font-size">Alternance, mission ou simple échange : je réponds dès que possible.</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph -->
-<p>[Formulaire de contact]</p>
-<!-- /wp:paragraph --></div>
+<!-- wp:wpforms/form-selector {"formId":"493","displayTitle":false,"displayDesc":false} /--></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
